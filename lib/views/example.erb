@@ -1,0 +1,29 @@
+Example HTML
+
+    <form action="/article" method="post">
+        <label for="title">Title:</label></br>
+        <input type="text" id="title" name="title" /><br>
+        <label for="url">URL:</label><br>
+        <input type="text" id="url" name="url" /><br>
+        <label for="article">Article:</label><br>
+        <input type="text" id="article" name="article" /> <br><br>
+        <input type="submit" id="button" value="Submit Answers"/>
+    </form>
+
+    <h2>Articles</h2>
+
+    <ul>
+
+      <% @articles.each do |title, hash| %>
+        <a href="<%= title %>"><li><%= hash[:title] %></li></a>
+      <%end%>
+
+    </ul>
+
+
+<%@answer_id += 1-%>
+<%@answer_id = @answer_id + 1 %>
+
+
+<%@question_id += 1-%>
+<%@question_id = @question_id + 1 %>

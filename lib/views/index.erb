@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Venue Finder!</title>
+    <link rel="stylesheet" href="home.css">
+  </head>
+
+  <body>
+    <h1>Your Personal Venue Finder!</h1>
+    <form action="/questionaire" method="post">
+        <%@questionaire_hash.each do |question, answers|%>
+
+          <p class="question"><%=question%></p>
+
+          <ul class="answers">
+
+              <%answers.each do |answer|%>
+                <input type="radio"
+                       name= "<%="q#{@question_id}"%>"
+                       value= "<%=answer%>"
+                       id= "<%=@question_id.to_s + @answer_id.to_s%>">
+                <label for= "<%=@question_id.to_s + @answer_id.to_s%>"><%=answer%></label><br/>
+
+
+                <%@answer_id += 1%>
+              <%end%>
+
+          </ul>
+
+          <%@question_id += 1%>
+         <%end%>
+         <input type="submit" id="button" value="Submit Answers"/>
+    </form>
+
+
+
+
+
+
+
+  </body>
+</html>
